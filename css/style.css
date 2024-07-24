@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,24 +8,29 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-:root{
-    --bg-color:#1f242d;
-    --second-bg-color:#323946;
-    --text-color:#fff;
-    --main-color:#0ef;
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
 }
 
-html{
+html {
     font-size: 62.5%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-body{
+body {
     background: var(--bg-color);
     color: var(--text-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
 }
 
 .header {
@@ -38,10 +43,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100%;
+    z-index: 100;
 }
 
-.header.sticky{
+.header.sticky {
     border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
 
@@ -78,7 +83,23 @@ body{
 
 .home-img img {
     width: 35vw;
+    animation: floatImage 4s ease-in-out infinite;
 }
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .home-content h3 {
     font-size: 3.2rem;
@@ -124,10 +145,10 @@ span {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: var(--main-color);
+    background: var(--main-color);
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--main-color);
     font-size: 1.6rem;
@@ -146,9 +167,9 @@ span {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background-color: var(--second-bg-color); 
+    background: var(--second-bg-color);
 }
- 
+
 .about-img img {
     width: 35vw;
 }
@@ -169,7 +190,7 @@ span {
 
 .about-content p {
     font-size: 1.6rem;
-    margin: 2rem 0 03rem;
+    margin: 2rem 0 3rem;
 }
 
 .services h2 {
@@ -191,7 +212,7 @@ span {
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
-    transition: .5s ease; 
+    transition: .5s ease;
 }
 
 .services-container .services-box:hover {
@@ -210,7 +231,7 @@ span {
 
 .services-box p {
     font-size: 1.6rem;
-    margin: 1rem 0 3rem;    
+    margin: 1rem 0 3rem;
 }
 
 .portfolio {
@@ -225,7 +246,7 @@ span {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 2,5rem;
+    gap: 2.5rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -238,17 +259,12 @@ span {
 
 .portfolio-box img {
     width: 100%;
-}
-
-.portfolio-box:hover img {
-    width: 100%;
     transition: .5s ease;
 }
 
 .portfolio-box:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
-    
 
 .portfolio-box .portfolio-layer {
     position: absolute;
@@ -268,7 +284,7 @@ span {
 }
 
 .portfolio-box:hover .portfolio-layer {
-    transform: translateY(0);
+    transform: translateY(0%);
 }
 
 .portfolio-layer h4 {
@@ -277,7 +293,7 @@ span {
 
 .portfolio-layer p {
     font-size: 1.6rem;
-    margin: .3rem 0 1rem; 
+    margin: .3rem 0 1rem;
 }
 
 .portfolio-layer a {
@@ -332,7 +348,7 @@ span {
 }
 
 .contact form .btn {
-    margin-top:  2rem;
+    margin-top: 2rem;
     cursor: pointer;
 }
 
@@ -340,12 +356,14 @@ span {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);    
+    background: var(--second-bg-color);
 }
 
-.footer text p {
+.footer-text p {
     font-size: 1.6rem;
+    text-align: center;
 }
 
 .footer-iconTop a {
@@ -368,7 +386,7 @@ span {
 }
 
 
-/*BREAKPOINT*/
+/* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -395,6 +413,7 @@ span {
     .contact {
         min-height: auto;
     }
+
     .footer {
         padding: 2rem 3%;
     }
@@ -408,12 +427,12 @@ span {
     .navbar {
         position: absolute;
         top: 100%;
-        left: 0%;
+        left: 0;
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0. 5rem 1rem rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
     }
 
@@ -496,6 +515,7 @@ span {
     }
 
     .footer p {
+        
         text-align: center;
         margin-top: 2rem;
     }
