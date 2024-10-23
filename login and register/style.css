@@ -225,3 +225,21 @@ header {
 .login-register p a:hover {
     text-decoration: underline;
 }
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label { /* Gunakan :not(:placeholder-shown) */
+    top: -10px; /* Mengangkat label lebih tinggi */
+    font-size: 0.75em; /* Ukuran font lebih kecil saat terangkat */
+    color: #fff; /* Warna label saat terangkat */
+}
